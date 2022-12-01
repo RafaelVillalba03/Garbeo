@@ -1,0 +1,25 @@
+﻿@model Camiseta
+
+
+<div class="row my-5">
+    <div class="col">
+        <img alt="@Model.Nombre" src="@Model.ImagenUrl" class="img-fluid border rounded-2"/>
+    </div>
+    <div class="col">
+        <hr />
+        <div class="row mt-5 text-center">
+            <h1>@Model.Nombre</h1>
+        </div>
+        <div class="row my-1 text-center">
+            <h2>@Model.Precio.ToString("c")</h2>
+        </div>
+        <div class="row my-1 text-center">
+            <p class="text-muted">IVA añadido</p>
+        </div>
+        <hr />
+        <a class="btn btn-secondary m-2" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-camisetaId="@Model.CamisetaId">
+            Añadir al carrito
+        </a>
+    </div>
+</div>
+

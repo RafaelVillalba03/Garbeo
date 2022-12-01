@@ -1,0 +1,63 @@
+﻿@model Order
+
+<form asp-action="Checkout" method="post" role="form">
+    <div class="my-5"><h2>Introduce los datos del pedido</h2></div>
+    <div class="col-6">
+        <div class="row g-2">
+            <div class="col-6">
+                <label asp-for="FirstName" class="form-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="col-10">
+                <label asp-for="LastName" class="form-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="col-10">
+                <label asp-for="Adress" class="form-label"></label>
+                <input asp-for="Adress" class="form-control" />
+                <span asp-validation-for="Adress" class="text-danger"></span>
+
+            </div>
+
+            <div class="col-4">
+                <label asp-for="City" class="form-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+
+            </div>
+
+            <div class="col-4">
+                <label asp-for="ZipCode" class="form-label"></label>
+                <input asp-for="ZipCode" class="form-control" />
+                <span asp-validation-for="ZipCode" class="text-danger"></span>
+
+            </div>
+
+            <div class="col-10">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+
+            </div>
+
+            <div class="col-10">
+                <label asp-for="PhoneNumber" class="form-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+            </div>
+        </div>
+
+        <div class="mt-2">
+            <div class="col my-5">
+                <input type="submit" class="btn btn-secondary" value="Completar pedido" />
+            </div>
+        </div>
+
+    </div>
+    
+</form>

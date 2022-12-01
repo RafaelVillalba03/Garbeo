@@ -1,0 +1,24 @@
+﻿@model Camiseta
+
+
+<div class="col">
+    <div class="card shadow-sm mx-auto">
+        <a class="mx-auto my-2" asp-controller="camiseta" asp-action="details" asp-route-id="@Model.CamisetaId">
+            <img src=@Model.ImagenUrl width="200" height="325" />
+        </a>
+        <div class="card-body">
+            <p class="card-text text-muted">@Model.Descripcion</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a class="btn btn-secondary"
+                    asp-controller="camiseta"
+                    asp-action="details"
+                    asp-route-id="@Model.CamisetaId">
+                    Comprar
+                    </a>
+                </div>
+                <strong>@Model.Precio.- €</strong>
+            </div>
+        </div>
+    </div>
+</div>

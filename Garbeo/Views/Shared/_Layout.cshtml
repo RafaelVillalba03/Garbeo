@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Garbeo</title>
+        <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+        <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+        <base href="/" />
+        <link rel="icon" href="/favicon.png" />
+        <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+        @RenderSection("head",false)
+    </head>
+
+<body>
+
+    <div class="container my-1">
+
+        <header>
+            <div class="navbar navbar-dark bg-dark shadow-sm rounded">
+                <div class="container-fluid row text-light">
+                        <div class="col-md-1">
+                            <a href="home" class="navbar-brand d-flex align-items-center">
+                                <img src="~/images/GarbeoLogo.webp" width="120" height="40" />
+                            </a>
+                        </div>
+                        <div class="col-md-1">
+                            <a asp-controller="home" asp-action="index" class="nav-link">
+                                Inicio
+                            </a>
+                        </div>
+                        <div class="col-md-1">
+                            <a asp-controller="camiseta" asp-action="list" class="nav-link" >
+                                Productos
+                            </a>
+                        </div>
+                        <div class="col-md-1">
+                            <a asp-controller="contacto" asp-action="index" class="nav-link">
+                                Contacto
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-1">
+                                <a class="nav-link" asp-controller="camiseta" asp-action="Search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg>
+                                </a>
+                        <vc:shopping-cart-summary></vc:shopping-cart-summary>
+
+                        </div>
+
+                </div>
+
+            </div>
+        
+        </header>
+
+        @RenderBody()
+    </div>
+
+    <footer class="text-muted py-5 bg-light">
+        <div class="container">
+            <a href="home">
+                <img src="~/images/GarbeoLogo.webp" class="float-end mb-1">
+            </a>
+            <p class="mb-1">Garbeo®. Marca de ropa registrada.</p>
+            <p class="mb-1">C. de Callejo, 38, 28053 Madrid</p>
+        </div>
+    </footer>
+    @RenderSection("Scripts",false)
+</body>
+</html>

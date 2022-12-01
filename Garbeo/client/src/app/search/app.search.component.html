@@ -1,0 +1,46 @@
+﻿<!--<div class="my-5">
+    <h3 class="mb-4">
+        Buscar productos
+    </h3>
+    <input id="txtCamisetaNombre" type="text" />
+    <button id="searchbutton" class="btn btn-secondary">Buscar</button>
+</div>-->
+
+<form #form="ngForm" class="my-5">
+    <h3 class="m-2">Filtrar:</h3>
+    <div class="form-group">
+        <label for="searchQuery"></label>
+        <input id="searchQuery" name="searchQuery" />
+        <button class="btn btn-secondary">Buscar</button>
+    </div>
+</form>
+<p class="m-1 text-muted"> Ejemplo incompleto de angular.</p>
+<p class="m-1 text-muted"> Falta meter la funcionalidad del formulario para filtrar el array de camisetas obtenidos de la API </p>
+<p class="m-1 text-muted"> Falta también meter Routing con HttpPost para ir a la página de Detalles de cada camiseta seleccionada al pulsar el botón Comprar</p>
+
+<div class="my-4" id="list">
+
+    <div class="row my-2" *ngFor="let c of injectProductos.camisetas">
+        <hr />
+        <div class="col-3 p-2 mx-2">
+            <img src="{{c.imagenUrl}}" height="250" width="170" class="border rounded" />
+        </div>
+        <div class="col-7">
+            <div class="mx-2">
+                <h2>{{c.nombre}} - {{c.precio}}€</h2>
+            </div>
+            <div class="mx-2">
+                <p class="text-muted">
+                    {{c.descripcion}}
+                </p>
+            </div>
+            <div class="align-items-end">
+                <button class="btn btn-secondary">
+                    Comprar
+                </button>
+            </div>
+        </div>
+        <hr />
+    </div>
+</div>
+

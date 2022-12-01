@@ -1,0 +1,71 @@
+﻿@model ShoppingCartViewModel
+
+<div class="text-center py-5">
+    <h1>
+        Carrito de compra
+    </h1>
+    <p class="text-muted">
+        @Model.ShoppingCart.ShoppingCartItems.Count elementos en tu cesta.
+    </p>
+</div>
+
+<hr />
+<div class="row">
+    <div class="col-6">
+        Productos
+    </div>
+    <div class="col-3">
+        Precio
+    </div>
+    <div class="col-3">
+        Cantidad
+    </div>
+</div>
+<hr />
+
+@foreach (var item in Model.ShoppingCart.ShoppingCartItems)
+{
+    <div class="row">
+    <div class="col-6">
+        <div class="row">
+            <div class="col-2">
+                    <img src=@item.Camiseta.ImagenUrl width="100" height="150">
+            </div>
+            <div class="col-6 mx-auto">
+                    <h3>@item.Camiseta.Nombre</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <h4>
+            @item.Camiseta.Precio.ToString("c")
+        </h4>
+    </div>
+    <div class="col-3">
+        <h3>
+            @item.Amount
+        </h3>
+    </div>
+</div>
+<hr />
+}
+
+<div class="row">
+    <div class="col-3 py-3 px-3 border border-secondary rounded">
+        <strong>Resumen del pedido:</strong>
+        <hr class="my-1" />
+        <div class="row">
+            <div class="col-3 my-auto">
+                Total:
+            </div>
+            <div class="col-7 fs-2">
+                @Model.ShoppingCartTotal.ToString("c")
+            </div>
+        </div>
+        <div class="btn-group text-center my-2 mx-auto">
+            <a class="btn btn-secondary" asp-controller="Order" asp-action="Checkout">Comprar ahora</a>
+        </div>
+    </div>
+</div>
+
+
